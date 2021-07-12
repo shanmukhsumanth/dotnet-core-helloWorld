@@ -24,5 +24,5 @@ jobs:
       uses: microsoft/setup-msbuild@v1
     
     - name: Build the Solution
-      working-directory: HelloWorld
+      working-directory: ci/tasks
       run: msbuild dotnet-core-helloWorld.sln
