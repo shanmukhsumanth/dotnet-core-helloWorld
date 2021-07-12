@@ -33,8 +33,9 @@ jobs:
     
     - name: Build the Solution
       run: msbuild dotnet-core-helloWorld.sln -t:restore,build -p:RestorePackagesConfig=true
-      
+  
   tests:
+    needs: build
     name: Unit Testing
     runs-on: windows-latest
     steps:
