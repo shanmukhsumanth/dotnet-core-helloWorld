@@ -22,6 +22,9 @@ jobs:
     
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
+      
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
     
     - name: Build the Solution
-      run: msbuild dotnet-core-helloWorld.sln
+      run: msbuild dotnet-core-helloWorld.sln -t:restore,build -p:RestorePackagesConfig=tru
